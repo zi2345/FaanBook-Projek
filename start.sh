@@ -1,6 +1,6 @@
 set -eu
 
-export PYTHONUNVUFFERED=true
+export PYTHONUNBUFFERED=true
 
 VIRTUALENV=.data/venv
 
@@ -9,7 +9,7 @@ if [ ! -d $VIRTUALENV ]; then
 fi
 
 if [ ! -f $VIRTUALENV/bin/pip ]; then
-  curl --silent --show-error --retry 5 https://booststrap.pypa.io/get-pip.py | $VIRTUALENV/bin/python 
+  curl --silent --show-error --retry 5 https://bootstrap.pypa.io/get-pip.py | $VIRTUALENV/bin/python 
 fi
 
 $VIRTUALENV/bin/pip install -r requirements.txt
